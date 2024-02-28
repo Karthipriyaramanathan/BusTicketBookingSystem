@@ -15,6 +15,7 @@ public class Account {
     private String email;
     private UserType userType;
 	/**
+	 *
 	 * @param username
 	 * @param password
 	 * @param email

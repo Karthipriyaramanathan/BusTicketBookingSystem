@@ -112,7 +112,7 @@ public class Administrator extends User implements Search{
 
     @Override
     public String toString() {
-        return "Administrator \nADMIN USER ID : " + getUserID() +"\nACCOUNT : " + getAccount() + "\nFIRSTNAME : " + getFirstName() +
+        return "Administrator \nUSER ID : " + getUserID() +"\nACCOUNT : " + getAccount() + "\nFIRSTNAME : " + getFirstName() +
         		"\nLASTNAME : " + getLastName() + "\nPHONE NUMBER : " + getPhoneNumber() + "\nDATE OF BIRTH : " + getDateOfBirth() +
         		"\nGENDER : " + getGender() + "\nADDRESS : " + getAddress() + "\nCITY : " + getCity() + "\nCOUNTRY : " + getCountry() +
         		" \nPOSTALCODE : " + getPostalCode() + "\nEMAIL VERIFIED : " + isEmailVerified() + "\nPHONE NUMBER VERIFIED : " + isPhoneNumberVerified()+"\n--------------------------------------------------";
