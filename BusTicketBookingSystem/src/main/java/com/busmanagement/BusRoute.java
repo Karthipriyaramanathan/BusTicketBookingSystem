@@ -9,7 +9,10 @@ import java.time.LocalTime;
 import java.util.List;
 
 /**
- * @author KARTHIPRIYA R
+ * The BusRoute class is the class that have tha states and 
+ * behavious of bus routes.
+ * @author KARTHIPRIYA RAMANATHAN (EXPLEO)
+ * @since 27 Feb 2024
  *
  */
 public class BusRoute {
@@ -189,11 +192,11 @@ public class BusRoute {
 	}	
 	@Override
 	public String toString() {
-	    return "----------------------------------------------------------------------------------------------------\n" +
+	    return "----------------------------------------------------------------------------------------------\n" +
 	           String.format("| %-7s | %-12s | %-15s | %-21s | %-21s |\n", "ROUTEID", "ORIGINCITY", "DESTINATIONCITY", "DEPARTURETIME", "ARRIVALTIME") +
-	           "----------------------------------------------------------------------------------------------------\n" +
+	           "----------------------------------------------------------------------------------------------\n" +
 	           String.format("| %-7d | %-12s | %-15s | %-21s | %-21s |\n", getRouteId(), getOriginCity(), getDestinationCity(), getDepartureTime(), getArrivalTime()) +
-	           "----------------------------------------------------------------------------------------------------";
+	           "----------------------------------------------------------------------------------------------";
 	}
 
 }

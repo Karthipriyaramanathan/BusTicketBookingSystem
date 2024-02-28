@@ -16,7 +16,10 @@ import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.InputMismatchException;
 import java.util.List;
 /**
- * @author KARTHIPRIYA R
+ * The Customer class that implements an application that a user of a 
+ * bus ticket booking application which inherits user class
+ * @author KARTHIPRIYA RAMANATHAN (EXPLEO)
+ * @since 27 Feb 2024
  *
  */
 public class Customer extends User implements Search{

@@ -18,7 +18,10 @@ import com.exceptionhandling.InvalidInputException;
 import com.implementation.DriverBus;
 import com.jdbcservice.JdbcConnection;
 /**
- * @author KARTHIPRIYA R
+ * The Administrator class that implements an application that a user of a 
+ * bus ticket booking application which inherits user class
+ * @author KARTHIPRIYA RAMANATHAN (EXPLEO)
+ * @since 27 Feb 2024
  *
  */
 public class Administrator extends User implements Search{

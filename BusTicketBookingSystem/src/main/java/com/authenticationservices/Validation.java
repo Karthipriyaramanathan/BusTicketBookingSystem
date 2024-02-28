@@ -17,7 +17,10 @@ import com.exceptionhandling.InvalidInputException;
 import com.userdetails.UserType;
 
 /**
- * @author KARTHIPRIYA R
+ * The Validation class is the class that is used for the validation for all
+ * the input entered by the customer.
+ * @author KARTHIPRIYA RAMANATHAN (EXPLEO)
+ * @since 27 Feb 2024
  *
  */
 public class Validation {

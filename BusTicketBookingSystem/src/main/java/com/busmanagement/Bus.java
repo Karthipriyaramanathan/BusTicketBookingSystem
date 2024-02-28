@@ -6,7 +6,10 @@ package com.busmanagement;
 import java.util.List;
 
 /**
- * @author KARTHIPRIYA R
+ * The Bus class is the class the real world entity class that have the states 
+ * and behaviours of the bus objects.
+ * @author KARTHIPRIYA RAMANATHAN (EXPLEO)
+ * @since 27 Feb 2024
  *
  */
 public class Bus {

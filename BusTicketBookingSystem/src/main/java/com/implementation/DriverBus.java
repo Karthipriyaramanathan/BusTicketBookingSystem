@@ -18,7 +18,10 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
- * @author KARTHIPRIYA R
+ * The DriverBus class is the driver class of the bus ticket booking system
+ * that will help to driver throught the system
+ * @author KARTHIPRIYA RAMANATHAN (EXPLEO)
+ * @since 27 Feb 2024
  *
  */
 public class DriverBus {
@@ -128,8 +131,6 @@ public class DriverBus {
             
             if (isValidUsername && isValidPassword && isValidEmail) {
                 Account account = new Account(username, password, email, userType);
-
-                // Insert user into the appropriate table
                 boolean registrationStatus = false;
                 switch (userType) {
                     case ADMINISTRATOR:
@@ -317,7 +318,7 @@ public class DriverBus {
 		    System.out.println("Invalid input! Please enter a valid number.");
 		}
 		catch(Exception e) {
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 		}
 	}
 	public static void busrouteManagement(Administrator admin) {
@@ -402,8 +403,8 @@ public class DriverBus {
 		                break;
 		            case 4:
 	//	                generateReports(con);
-		            	System.out.println("HI");
-		                break;
+	//	            	System.out.println("HI");
+	//	                break;
 		            case 5:
 		                System.out.println("Now! in previous page");
 		                return;
@@ -706,7 +707,7 @@ public class DriverBus {
 		        try {
 		        	System.out.println("1. Search Bus Routes\n2. View Bus Schedules\n3. Check Seat Availability\n" +
 						    "4. Book Tickets\n5. View Booking History\n6. Cancel Booking\n" +
-						    "7. Update Profile\n8.View Profile\n9. Change Password\n10.Customer Service\n11.Go to previous page" +
+						    "7. Update Profile\n8. View Profile\n9. Change Password\n10.Customer Service\n11.Go to previous page" +
 						    "\n12.Exit\nEnter your choice: ");
 		            choice = scanner.nextInt();
 		            scanner.nextLine();
@@ -839,9 +840,6 @@ public class DriverBus {
 			boolean loop=true;
 			while(loop) {
 				int choice=4;
-//				System.out.println("1.Administator\n2.Customer\n3.Guest\n4.Exit\nPlease! Enter your choice:");
-//				int choice=scanner.nextInt();
-//				scanner.nextLine();
 				try {
 					System.out.println("1.Administator\n2.Customer\n3.Exit\nPlease! Enter your choice:");
 		            choice = scanner.nextInt();

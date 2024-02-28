@@ -6,7 +6,10 @@ package com.customerservices;
 import java.sql.Timestamp;
 
 /**
- * @author KARTHIPRIYA R
+ * The FAQ class is the class that is for the frequents asked questions 
+ * from the customer.
+ * @author KARTHIPRIYA RAMANATHAN (EXPLEO)
+ * @since 27 Feb 2024
  *
  */
 public class FAQ {

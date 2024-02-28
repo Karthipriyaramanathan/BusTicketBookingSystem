@@ -6,7 +6,10 @@ package com.customerservices;
 import java.sql.Timestamp;
 
 /**
- * @author KARTHIPRIYA R
+ * The Feedback class is the class that implements the comparable interface
+ * and it uses the compareTo method to compare the objects
+ * @author KARTHIPRIYA RAMANATHAN (EXPLEO)
+ * @since 27 Feb 2024
  *
  */
 public class Feedback implements Comparable<Feedback>{
@@ -106,11 +109,11 @@ public class Feedback implements Comparable<Feedback>{
     }
 	@Override
 	public String toString() {
-	    return String.format("------------------------------------------------------------------------------------------------------------------------\n" +
+	    return String.format("---------------------------------------------------------------------------------------------------\n" +
 	                         "| %-11s | %-7s | %-30s | %-7s | %-20s    |\n" +
-	                         "------------------------------------------------------------------------------------------------------------------------\n" +
+	                         "---------------------------------------------------------------------------------------------------\n" +
 	                         "| %-11d | %-7d | %-30s | %-7d | %-20s |\n" +
-	                         "------------------------------------------------------------------------------------------------------------------------",
+	                         "---------------------------------------------------------------------------------------------------",
 	                         "FeedbackID", "UserID", "Comments", "Rating", "FeedbackDate",
 	                         getFeedbackId(), getUserId(), getComments(), getRating(), getFeedbackDate());
 	}

@@ -10,7 +10,12 @@ import com.exceptionhandling.InvalidInputException;
 import com.jdbcservice.JdbcConnection;
 
 /**
- * @author KARTHIPRIYA R
+ * The CreditCardPayment class is the class that implements an application the
+ * bus ticket booking system and this class inherits the abstract class called 
+ * Payment and it implements the abstact methods of parent class
+ * 
+ * @author KARTHIPRIYA RAMANATHAN (EXPLEO)
+ * @since 27 Feb 2024
  *
  */
 public class CreditCardPayment extends Payment {
@@ -26,11 +31,10 @@ public class CreditCardPayment extends Payment {
     public void processPayment() throws InvalidInputException {
         // Get card details
         getCardDetails();
-
-        // Dummy card payment processing
-        // You would replace this with actual payment processing logic
+        System.out.println("---------------- PAYMENT ---------------------");
         System.out.println("Processing card payment...");
         System.out.println("Payment of Rs." + amount + " processed with credit card. Thank you!");
+        System.out.println("----------------------------------------------");
     }
     private void getCardDetails() throws InvalidInputException {
 
@@ -74,8 +78,9 @@ public class CreditCardPayment extends Payment {
 
     @Override
     public void refund() {
+    	System.out.println("--------------- REFUNDING ----------------------");
         System.out.println("Refunding Rs." + amount + " to credit card.");
-        // Perform actual refund process here if necessary
         System.out.println("Refund successful.");
+        System.out.println("------------------------------------------------");
     }
 }

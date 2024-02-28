@@ -4,7 +4,10 @@
 package com.busmanagement;
 
 /**
- * @author KARTHIPRIYA R
+ * The Seat class is the class that have the states and behaviours of a seat 
+ * object.
+ * @author KARTHIPRIYA RAMANATHAN (EXPLEO)
+ * @since 27 Feb 2024
  *
  */
 public class Seat {

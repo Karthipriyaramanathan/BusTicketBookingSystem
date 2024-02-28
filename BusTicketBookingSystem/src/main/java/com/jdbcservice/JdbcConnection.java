@@ -42,7 +42,10 @@ import com.customerservices.*;
 import com.exceptionhandling.InvalidInputException;
 
 /**
- * @author KARTHIPRIYA R
+ * The JdbcConnection class is the class that have the connection with the 
+ * database and it have the behaviours of the operations.
+ * @author KARTHIPRIYA RAMANATHAN (EXPLEO)
+ * @since 27 Feb 2024
  *
  */
 public class JdbcConnection {
@@ -52,8 +55,9 @@ public class JdbcConnection {
 	static String password="1234rk";
 	public static Connection connectdatabase() throws ClassNotFoundException, SQLException{
 		Connection con=null;
+			//Step1: Register the class.
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			// Step2 - Create Connections.
+			//Step2 - Create Connections.
 			con=DriverManager.getConnection(URL,userName,password);
 			//checking connection established or not.
 			if(con==null)
@@ -393,18 +397,18 @@ public class JdbcConnection {
 //		        	" "+resultSet.getString(7)+" "+resultSet.getString(8)+" ");
 //		        }
 //	        }
-	        	System.out.println("---------------------------------------------------------------------------------------------------------------------");
-	            System.out.printf("| %-10s | %-25s | %-15s | %-30s | %-30s | %-20s | %-15s | %-15s |\n", 
+	        	System.out.println("----------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+	            System.out.printf("| %-10s | %-25s | %-15s | %-30s | %-20s | %-15s | %-15s | %-10s |\n", 
 	                              "OPERATORID", "OPERATORNAME", "CONTACTNUMBER", "EMAIL", "ADDRESS", "CITY", "COUNTRY", "NUMBEROFBUSES");
-	            System.out.println("---------------------------------------------------------------------------------------------------------------------");
+	            System.out.println("----------------------------------------------------------------------------------------------------------------------------------------------------------------------");
 	            while (resultSet.next()) {
-	                System.out.printf("| %-10d | %-25s | %-15s | %-30s | %-30s | %-20s | %-15s | %-15s |\n",
+	                System.out.printf("| %-10s | %-25s | %-15s | %-30s | %-20s | %-15s | %-15s | %-10s |\n",
 	                                  resultSet.getInt(1), resultSet.getString(2),
 	                                  resultSet.getString(3), resultSet.getString(4),
 	                                  resultSet.getString(5), resultSet.getString(6),
 	                                  resultSet.getString(7), resultSet.getInt(8));
 	            }
-	            System.out.println("---------------------------------------------------------------------------------------------------------------------");
+	            System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------");
 	        }
 	    }
 	}
@@ -427,7 +431,6 @@ public class JdbcConnection {
             pstmt.setTimestamp(4, Timestamp.valueOf(arrivalDateTime));
             pstmt.setInt(5, distance);
             pstmt.setString(6, duration);
-
             int rowsInserted = pstmt.executeUpdate();
             inserted = rowsInserted > 0;
         }
@@ -628,9 +631,9 @@ public class JdbcConnection {
 		            LocalTime durationTime=LocalTime.parse(duration,format);
 		            BusRoute route=new BusRoute(routeId,originCity,destinationCity,departureTime,arrivalTime,distance,durationTime);
 		            routes.add(route);		            
-	                System.out.println("----------------------------------------------------------------------------------------------------");
+	                System.out.println("-------------------------------------------------------------------------------------------");
 	                System.out.printf("| %-7s | %-12s | %-15s | %-21s | %-21s |\n", "ROUTEID", "ORIGINCITY", "DESTINATIONCITY", "DEPARTURETIME", "ARRIVALTIME");
-	                System.out.println("----------------------------------------------------------------------------------------------------");
+	                System.out.println("-------------------------------------------------------------------------------------------");
 	                while (resultSet.next()) {
 	                    System.out.printf("| %-7d | %-12s | %-15s | %-21s | %-21s |\n",
 	                                      resultSet.getInt("ROUTEID"), resultSet.getString("ORIGINCITY"),
@@ -655,8 +658,6 @@ public class JdbcConnection {
             try (ResultSet resultSet = statement.executeQuery()) {
                 while (resultSet.next()) {
                     int scheduleId = resultSet.getInt(1);
-                    // You can retrieve other schedule details as needed
-                    // For example, departure time, arrival time, etc.
                     String departureTime = resultSet.getString(2);
                     String arrivalTime = resultSet.getString(3);
                     // Create a BusSchedule object and add it to the list
@@ -769,7 +770,7 @@ public class JdbcConnection {
 		 boolean bol=false;
 		 int count=0;  
 		 List<Integer> selectedSeat=new ArrayList<>();
-        // Prepare the SQL query to get available seats for the route
+        // the SQL query to get available seats for the route
         String query = "SELECT SEATNUMBER,SEATTYPE,SEATFARE FROM BUSTICKETBOOKINGSYSTEM.SEAT WHERE BUSID = (SELECT BUSID FROM BUSTICKETBOOKINGSYSTEM.BUSROUTE WHERE ROUTEID = ?) AND ISOCCUPIED = 0";
         try(PreparedStatement preparedStatement = connection.prepareStatement(query)){
             preparedStatement.setInt(1, routeId);
@@ -799,7 +800,6 @@ public class JdbcConnection {
 			    	                System.out.println("Seat " + selectedSeatNumber + " selected successfully for booking.");
 			    	                count++;
 			    	                break;
-			    	                // Perform booking process here
 			    	            } else {
 			    	                System.out.println("Seat " + selectedSeatNumber + " is not available for booking.");
 			    	            }
@@ -809,8 +809,7 @@ public class JdbcConnection {
 		            		JdbcConnection.bookTicket(connection, userId, routeId,count,selectedSeat);
 		            		bol=true;
 		            	} catch (SQLException e) {
-		            		// TODO Auto-generated catch block
-		            		e.printStackTrace();
+		            		System.out.println(e.getMessage());
 		            	}
 	            	}
 	            	else {
@@ -881,7 +880,6 @@ public class JdbcConnection {
 	        // Fetch bus seat type based on route ID
 	        String busSeatType = fetchBusSeatType(connection, routeId);
 	        // Fetch seat fare based on bus seat type and seat type
-	        // Calculate total fare
 	        // Generate booking ID
 	        int bookingId = generateBookingId(connection);
 	        // Get current timestamp
@@ -902,7 +900,7 @@ public class JdbcConnection {
  		}
  	}
  	public static String payment(double totalFare) throws InvalidInputException ,SQLIntegrityConstraintViolationException {
- 		System.out.println("Total amount to pay: $" + totalFare);
+ 		System.out.println("Total amount to pay: Rs." + totalFare);
         // Select payment method
  		 String paymentMethod="not specified";
         System.out.println("Select payment method:");
@@ -945,7 +943,6 @@ public class JdbcConnection {
         catch(InputMismatchException e) {
         	System.out.println("Invalid input!........");
         	scanner.nextLine();
-        	//continue;
         }
      }
     return paymentMethod;
@@ -1066,15 +1063,15 @@ public class JdbcConnection {
     private static double calculateLuxuryFare(String seatType) {
         switch (seatType) {
             case "Seater":
-                return 50.0; // Example fare for a standard luxury seat
+                return 50.0; // Fare for a standard luxury seat
             case "Sleeper":
-                return 60.0; // Example fare for a sleeper luxury seat
+                return 60.0; // Fare for a sleeper luxury seat
             case "Window":
-                return 55.0; // Example fare for a window luxury seat
+                return 55.0; // Fare for a window luxury seat
             case "Aisle":
-                return 55.0; // Example fare for an aisle luxury seat
+                return 55.0; // Fare for an aisle luxury seat
             case "Middle":
-                return 52.5; // Example fare for a middle luxury seat
+                return 52.5; // Fare for a middle luxury seat
             default:
                 return 0.0; // Default fare if seat type is not recognized
         }
@@ -1083,15 +1080,15 @@ public class JdbcConnection {
     private static double calculateSemiSleeperFare(String seatType) {
         switch (seatType) {
             case "Standard":
-                return 40.0; // Example fare for a standard semi-luxury seat
+                return 40.0; // Fare for a standard semi-luxury seat
             case "Sleeper":
-                return 45.0; // Example fare for a sleeper semi-luxury seat
+                return 45.0; // Fare for a sleeper semi-luxury seat
             case "Window":
-                return 42.0; // Example fare for a window semi-luxury seat
+                return 42.0; // Fare for a window semi-luxury seat
             case "Aisle":
-                return 42.0; // Example fare for an aisle semi-luxury seat
+                return 42.0; // Fare for an aisle semi-luxury seat
             case "Middle":
-                return 41.0; // Example fare for a middle semi-luxury seat
+                return 41.0; // Fare for a middle semi-luxury seat
             default:
                 return 0.0; // Default fare if seat type is not recognized
         }
@@ -1099,15 +1096,15 @@ public class JdbcConnection {
     private static double calculateSleeperFare(String seatType) {
         switch (seatType) {
             case "Seater":
-                return 30.0; // Example fare for a standard economy seat
+                return 30.0; // Fare for a standard economy seat
             case "Sleeper":
-                return 35.0; // Example fare for a sleeper economy seat
+                return 35.0; // Fare for a sleeper economy seat
             case "Window":
-                return 32.0; // Example fare for a window economy seat
+                return 32.0; // Fare for a window economy seat
             case "Aisle":
-                return 32.0; // Example fare for an aisle economy seat
+                return 32.0; // Fare for an aisle economy seat
             case "Middle":
-                return 31.0; // Example fare for a middle economy seat
+                return 31.0; // Fare for a middle economy seat
             default:
                 return 0.0; // Default fare if seat type is not recognized
         }
@@ -1115,15 +1112,15 @@ public class JdbcConnection {
     private static double calculateStandardFare(String seatType) {
         switch (seatType) {
             case "Seater":
-                return 30.0; // Example fare for a standard economy seat
+                return 30.0; // Fare for a standard economy seat
             case "Sleeper":
-                return 35.0; // Example fare for a sleeper economy seat
+                return 35.0; // Fare for a sleeper economy seat
             case "Window":
-                return 32.0; // Example fare for a window economy seat
+                return 32.0; // Fare for a window economy seat
             case "Aisle":
-                return 32.0; // Example fare for an aisle economy seat
+                return 32.0; // Fare for an aisle economy seat
             case "Middle":
-                return 31.0; // Example fare for a middle economy seat
+                return 31.0; // Fare for a middle economy seat
             default:
                 return 0.0; // Default fare if seat type is not recognized
         }
@@ -1187,7 +1184,7 @@ public class JdbcConnection {
         return 1; // Return 1 if there are no existing cancellation IDs
     }
     public static void insertCancellation(Connection connection, int bookingId) throws SQLException ,SQLIntegrityConstraintViolationException {
-        // Prepare the query to insert cancellation record
+        // the query to insert cancellation record
         String query = "INSERT INTO BUSTICKETBOOKINGSYSTEM.CANCELLATION (CANCELLATIONID, BOOKINGID, USERID, ROUTEID, CANCELLATIONDATE, REFUNDAMOUNT) VALUES (?,?,?,?,?,?)";
         String select= "SELECT userid,routeid,totalfare from busticketbookingsystem.booking where bookingid=?";
         try(PreparedStatement preparedStatements=connection.prepareStatement(select)){
@@ -1501,7 +1498,7 @@ public class JdbcConnection {
 		            address = scanner.nextLine();
 		            if (!Validation.isValidAddress(address)) {
 		                System.out.println("Invalid address format.");
-		                continue;// Exit the program or handle the error accordingly
+		                continue;
 		            }else {
 		            	break;
 		            }
@@ -1511,7 +1508,7 @@ public class JdbcConnection {
 		            city = scanner.nextLine();
 		            if (!Validation.isValidCity(city)) {
 		                System.out.println("Invalid city format.");
-		                continue;// Exit the program or handle the error accordingly
+		                continue;
 		            }else {
 		            	break;
 		            }
@@ -1521,7 +1518,7 @@ public class JdbcConnection {
 		            country = scanner.nextLine();
 		            if (!Validation.isValidCountry(country)) {
 		                System.out.println("Invalid country format.");
-		                continue; // Exit the program or handle the error accordingly
+		                continue;
 		            }
 		            else {
 		            	break;
@@ -1737,7 +1734,7 @@ public class JdbcConnection {
 			 statement.setInt(1, userid);
 			 try(ResultSet resultSet=statement.executeQuery()){
 				 System.out.println("--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-				 System.out.printf("| %-7s | %-20s | %-20s | %-30s | %-15s | %-20s | %-20s | %-15s | %-10s | %-40s | %-20s | %-20s | %-10s |%n",
+				 System.out.printf("| %-7s | %-15s | %-20s | %-30s | %-15s | %-15s | %-20s | %-15s | %-10s | %-40s | %-20s | %-20s | %-10s |%n",
 				                   "USERID", "USERNAME", "PASSWORD", "EMAIL", "USERTYPE", "FIRSTNAME", "LASTNAME", "PHONENUMBER",
 				                   "DATEOFBIRTH", "GENDER", "ADDRESS", "CITY", "COUNTRY", "POSTALCODE");
 				 System.out.println("--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");

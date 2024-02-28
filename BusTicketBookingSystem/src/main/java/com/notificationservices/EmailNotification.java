@@ -4,8 +4,8 @@
 package com.notificationservices;
 
 /**
- * @author KARTHIPRIYA R
- *
+ * @author KARTHIPRIYA RAMANATHAN (EXPLEO)
+ * @since 27 Feb 2024
  */
 public class EmailNotification extends Notification{
 	private String emailAddress;
@@ -14,7 +14,10 @@ public class EmailNotification extends Notification{
     }
     @Override
     public void sendNotification(String message) {
+    	System.out.println("------------------Notification-------------------------------");
         System.out.println("Sending email to " + emailAddress + ": \n" + message);
-        // Code to send email notification to the given email address
+        // To send email notification to the given email address
+        System.out.println("-------------------------------------------------------------");
+        
     }
 }

@@ -6,7 +6,11 @@ package com.busmanagement;
 import java.sql.ResultSet;
 
 /**
- * @author KARTHIPRIYA R
+ * The BusOperator class is the class that have its states and behaviours 
+ * in it and the busoperator is like an organization which can provide a 
+ * information about the bus routes and buses.
+ * @author KARTHIPRIYA RAMANATHAN (EXPLEO)
+ * @since 27 Feb 2024
  *
  */
 public class BusOperator {

@@ -4,8 +4,10 @@
 package com.userdetails;
 
 /**
- * @author KARTHIPRIYA R
- *
+ * The Account class that implements an applicaiton the bus ticket booking system
+ * that a user can have strong composition.
+ * @author KARTHIPRIYA RAMANATHAN (EXPLEO)
+ * @since 27 Feb 2024
  */
 public class Account {
     private String username;

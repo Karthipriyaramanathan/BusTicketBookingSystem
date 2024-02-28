@@ -4,7 +4,10 @@
 package com.busmanagement;
 
 /**
- * @author KARTHIPRIYA R
+ * The SleeperSeat class is the class that inherits from the super class
+ * Seat that gives the information of the sleeper seats in a bus. 
+ * @author KARTHIPRIYA RAMANATHAN (EXPLEO)
+ * @since 27 Feb 2024
  *
  */
 public class SleeperSeat extends Seat{

@@ -4,7 +4,9 @@
 package com.bookingservices;
 
 /**
- * @author KARTHIPRIYA R
+ * The Booking class is the class that have its states and behaviours of booking.
+ * @author KARTHIPRIYA RAMANATHAN (EXPELO)
+ * @since 27 Feb 2024
  *
  */
 public class Booking {

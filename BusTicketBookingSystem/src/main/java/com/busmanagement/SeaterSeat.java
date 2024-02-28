@@ -4,7 +4,10 @@
 package com.busmanagement;
 
 /**
- * @author KARTHIPRIYA R
+ * The SeaterSeat is a class that inherits from the super class called seat
+ * and it will have the seater seat informations.
+ * @author KARTHIPRIYA RAMANATHAN (EXPLEO)
+ * @since 27 Feb 2024
  *
  */
 public class SeaterSeat extends Seat{

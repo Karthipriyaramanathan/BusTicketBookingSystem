@@ -4,7 +4,10 @@
 package com.layoutdesign;
 
 /**
- * @author KARTHIPRIYA R
+ * The LayoutDesign class is the class that have a welcomeNote method to dispaly 
+ * the String which is greets the user
+ * @author KARTHIPRIYA RAMANATHAN (EXPLEO)
+ * @since 27 Feb 2024
  *
  */
 public class LayoutDesign {

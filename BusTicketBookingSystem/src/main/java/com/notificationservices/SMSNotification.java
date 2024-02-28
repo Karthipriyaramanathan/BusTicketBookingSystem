@@ -4,7 +4,9 @@
 package com.notificationservices;
 
 /**
- * @author KARTHIPRIYA R
+ * 
+ * @author KARTHIPRIYA RAMANATHAN (EXPLEO)
+ * @since 27 Feb 2024
  *
  */
 public class SMSNotification extends Notification{
@@ -15,6 +17,6 @@ public class SMSNotification extends Notification{
     @Override
     public void sendNotification(String message) {
         System.out.println("Sending SMS to " + phoneNumber + ": " + message);
-        // Code to send SMS notification to the given phone number
+        // to send SMS notification to the given phone number
     }
 }

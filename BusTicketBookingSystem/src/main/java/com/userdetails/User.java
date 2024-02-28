@@ -4,7 +4,10 @@
 package com.userdetails;
 
 /**
- * @author KARTHIPRIYA R
+ * The User class that implements an application that a user of a 
+ * bus ticket booking application
+ * @author KARTHIPRIYA RAMANATHAN (EXPLEO)
+ * @since 27 Feb 2024
  *
  */
 public class User {
