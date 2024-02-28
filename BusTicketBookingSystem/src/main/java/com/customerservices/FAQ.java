@@ -8,6 +8,7 @@ import java.sql.Timestamp;
 /**
  * The FAQ class is the class that is for the frequents asked questions 
  * from the customer.
+ * 
  * @author KARTHIPRIYA RAMANATHAN (EXPLEO)
  * @since 27 Feb 2024
  *
