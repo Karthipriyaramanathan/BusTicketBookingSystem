@@ -112,10 +112,10 @@ public class Administrator extends User implements Search{
 
     @Override
     public String toString() {
-        return "Administrator \nUSERID : " + getUserID() +"\naccount : " + getAccount() + "\nFIRSTNAME : " + getFirstName() +
+        return "Administrator \nADMIN USER ID : " + getUserID() +"\nACCOUNT : " + getAccount() + "\nFIRSTNAME : " + getFirstName() +
         		"\nLASTNAME : " + getLastName() + "\nPHONE NUMBER : " + getPhoneNumber() + "\nDATE OF BIRTH : " + getDateOfBirth() +
         		"\nGENDER : " + getGender() + "\nADDRESS : " + getAddress() + "\nCITY : " + getCity() + "\nCOUNTRY : " + getCountry() +
-        		" \nPOSTALCODE : " + getPostalCode() + "\nEMAIL VERIFIED : " + isEmailVerified() + "\nPHNONE NUMBER VERIFIED : " + isPhoneNumberVerified()+"\n--------------------------------------------------";
+        		" \nPOSTALCODE : " + getPostalCode() + "\nEMAIL VERIFIED : " + isEmailVerified() + "\nPHONE NUMBER VERIFIED : " + isPhoneNumberVerified()+"\n--------------------------------------------------";
     }
 	static Scanner scanner=new Scanner(System.in);
 	public void addMember(UserType usertype) {

@@ -110,9 +110,9 @@ public class Feedback implements Comparable<Feedback>{
 	@Override
 	public String toString() {
 	    return String.format("---------------------------------------------------------------------------------------------------\n" +
-	                         "| %-11s | %-7s | %-30s | %-7s | %-20s    |\n" +
+	                         "| %-10s | %-8s | %-30s | %-7s | %-20s    |\n" +
 	                         "---------------------------------------------------------------------------------------------------\n" +
-	                         "| %-11d | %-7d | %-30s | %-7d | %-20s |\n" +
+	                         "| %-10d | %-8d | %-30s | %-7d | %-20s |\n" +
 	                         "---------------------------------------------------------------------------------------------------",
 	                         "FeedbackID", "UserID", "Comments", "Rating", "FeedbackDate",
 	                         getFeedbackId(), getUserId(), getComments(), getRating(), getFeedbackDate());

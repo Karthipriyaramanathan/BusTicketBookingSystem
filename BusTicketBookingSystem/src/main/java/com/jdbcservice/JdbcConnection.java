@@ -391,12 +391,6 @@ public class JdbcConnection {
         final String OPERATOR_SELECT = "SELECT * FROM BUSTICKETBOOKINGSYSTEM.BUSOPERATOR order by operatorid";
         try(Statement statement = con.createStatement()){
 	        try(ResultSet resultSet = statement.executeQuery(OPERATOR_SELECT)){
-//		        while (resultSet.next()) {
-//		        	System.out.println(resultSet.getInt(1)+" "+resultSet.getString(2)+" "+resultSet.getString(3)
-//		        	+" "+resultSet.getString(4)+" "+resultSet.getString(5)+" "+resultSet.getString(6)+
-//		        	" "+resultSet.getString(7)+" "+resultSet.getString(8)+" ");
-//		        }
-//	        }
 	        	System.out.println("----------------------------------------------------------------------------------------------------------------------------------------------------------------------");
 	            System.out.printf("| %-10s | %-25s | %-15s | %-30s | %-20s | %-15s | %-15s | %-10s |\n", 
 	                              "OPERATORID", "OPERATORNAME", "CONTACTNUMBER", "EMAIL", "ADDRESS", "CITY", "COUNTRY", "NUMBEROFBUSES");
